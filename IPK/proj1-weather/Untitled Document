@@ -1,0 +1,16 @@
+﻿Dokumentace k prvnímu projektu z předmětu IPK
+Varianta 2. Weather app
+Autor: Jakub Gajdošík
+Login: xgajdo24
+
+Zadání
+Naprogramovat aplikaci, která při zadání platného názvu města a klíče, vypíše aktualní počasí, teplotu, sílu a směr větru. Pomocný servr co zasílá zprávy o komunikaci je Openweathermap.
+
+Řešení
+Openweathermap zajišťuje kontrolu klíče i zasílání potřebných dat při zaslání města. Tudíš byla pouze potřeba vytvořit aplikaci co otevře soket pro komunikaci s Openweathermap, zakóduje zadané parametry, rozkóduje zaslaná data servrem a strukturovaně je vypíše na STDOUT. Vybral sjem si jazyk Python ve kterém je daný projekt velmi lehce vykonán za pomocí knihony socket, která obsahuje funce pro vytvoření soketu, jeho připojení, odeslání, i příjmutí dat. Poté se jedná pouze o kontrolu chybových stavů a konečný výpis.
+
+Spouštění aplikace
+První je nutné si na stránkách Openweathermap vytvořit účet a získat osobní ”api_key” který je nutný pro spuštění aplikace. Soubory je nutné mít ve stejné složce a zadat příkaz:
+make run api_key=“api_key” city“město” 
+Kde “api_key” je váš klíč ze stránky Openweathermap a “město” je název města jehož počasí chcete vypsat.
+
