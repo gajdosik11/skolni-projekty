@@ -1,0 +1,14 @@
+--- proj2.c.odevzdany	2018-05-01 13:20:22.000000000 +0200
++++ proj2.c	2018-05-07 17:39:08.922897020 +0200
+@@ -8,7 +8,10 @@
+ void cekej( unsigned max_doba)
+ {
+ 	if (max_doba != 0)
+-		sleep(rand() % max_doba);
++	{
++		max_doba *= 1000;
++		usleep(rand() % max_doba);
++	}
+ }
+ 
+ void bus_cesta(unsigned zpozdeni, unsigned konec_rideru)
