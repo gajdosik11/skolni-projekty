@@ -1,0 +1,500 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  color: #15161a;
+}
+
+.button {
+  border: none;
+  padding: 0rem 0rem;
+  background: #f7c43a;
+  font-size: .8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: .3s ease-in-out;
+  display:  block;
+  /* height: 23px; */
+}
+
+.button a{
+  color: #15161a;
+  text-decoration: none;
+  display: block;
+  padding: 1rem 2rem;
+}
+
+.button:hover a{
+  background: #15161a;
+}
+
+.button a:hover{
+  color: #f7c43a;
+}
+
+header {
+  background-image: url('../img/hero.jpg');
+  background-position: center center;
+  background-color: #15161a;
+  background-size: cover;
+  min-height: 75vh;
+  width: 100%;
+  position: relative;
+}
+
+header:after {
+  top: 0;
+  position: absolute;
+  height: 75vh;
+  width: 100%;
+  content: "";
+  background: rgba(21, 22, 26, 0.6);
+}
+
+header.header-narrow, header.header-narrow:after {
+  min-height: 30vh;
+  height: 30vh;
+}
+
+header.header-about {
+  background-image: url("../img/about-header.jpg");
+}
+
+header.header-services {
+  background-image: url("../img/services-header.jpg");
+}
+
+header.header-contact {
+  background-image: url("../img/contact-header.jpg");
+}
+
+header .header-inner {
+  position: relative;
+  z-index: 2;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+header .header-inner #logo {
+  text-decoration: none;
+  letter-spacing: 2px;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header .header-inner #logo img {
+  max-height: 80px;
+}
+
+header .header-inner #logo h1 {
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center;
+  margin: 0 0 0 1rem;
+  font-size: 1rem;
+  color: #fff;
+}
+
+header .header-inner #logo h1 span {
+  color: #f7c43a;
+}
+
+header .header-inner nav ul {
+  padding: 0;
+  margin: 0;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+header .header-inner nav ul li {
+  list-style: none;
+  letter-spacing: 2px;
+}
+
+header .header-inner nav ul li:not(:last-of-type) {
+  margin-right: 2rem;
+}
+
+header .header-inner nav ul li a {
+  text-transform: uppercase;
+  color: #fff;
+  text-decoration: none;
+  transition: .3s ease-in-out;
+  font-weight: 100;
+}
+
+header .header-inner nav ul li a:hover {
+  color: #f7c43a;
+}
+
+.nav ul {
+  list-style: none;
+}
+
+main h2 {
+  margin-top: 0;
+  text-transform: uppercase;
+}
+
+main h2 span {
+  color: #f7c43a;
+}
+
+main.service {
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main.service #gallery {
+  background: transparent;
+  padding: 0;
+}
+
+main.service aside {
+  padding: 4rem 2rem;
+  background: #373a44;
+  min-width: 200px;
+}
+
+main.service aside ul {
+  padding: 0;
+  margin: 0;
+}
+
+main.service aside ul li {
+  list-style: none;
+}
+
+main.service aside ul li:not(:last-of-type) {
+  margin-bottom: 1rem;
+}
+
+main.service aside ul li a {
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all .3s ease-in-out;
+}
+
+main.service aside ul li a:hover {
+  color: #f7c43a;
+}
+
+main #services-cards {
+  display: -ms-flexbox;
+  display: flex;
+  background: whitesmoke;
+  padding: 4rem 2rem;
+}
+
+main #services-cards .card {
+  background: #fff;
+  padding: 1rem;
+  width: 100%;
+  box-shadow: 0px 0px 26px -2px rgba(0, 0, 0, 0.15);
+}
+
+main #services-cards .card:not(:last-of-type) {
+  margin-right: 2rem;
+}
+
+main #services-cards .card-img {
+  height: 200px;
+  background-position: center center;
+  background-color: #15161a;
+  background-size: cover;
+  margin-bottom: 1rem;
+}
+
+main #services-cards .card a {
+  color: #15161a;
+}
+
+main #services-cards .card a:hover {
+  color: #f7c43a;
+}
+
+main #services-cards .card .button:hover a {
+  color: #f7c43a;
+}
+
+main #services-cards .card.card-1 .card-img {
+  background-image: url("../img/service-1.jpeg");
+}
+
+main #services-cards .card.card-2 .card-img {
+  background-image: url("../img/service-2.jpeg");
+}
+
+main #services-cards .card.card-3 .card-img {
+  background-image: url("../img/service-3.jpeg");
+}
+
+main #services-cards .card .card-body {
+  margin-bottom: 1rem;
+}
+
+main #services-cards .card .card-body .hidden {
+  display: none;
+}
+
+main #services-cards .card .card-body p {
+  color: #8c90a2;
+}
+
+main #services-cards .card .card-footer {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+main #about {
+  margin: 4rem 2rem;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+main #about img {
+  max-width: 30%;
+  margin-right: 2rem;
+}
+
+main #about .about-body {
+  -ms-flex: 4;
+  flex: 4;
+}
+
+main #about .about-body h2 {
+  margin-top: 0;
+}
+
+main #about .about-body h2 span {
+  color: #f7c43a;
+}
+
+main #about .about-body p {
+  color: #8c90a2;
+}
+
+main #about .about-body .button {
+  float: right;
+}
+
+main #gallery {
+  padding: 4rem 2rem;
+  background: whitesmoke;
+}
+
+main #gallery .gallery-wrapper {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: 0 -1rem;
+}
+
+main #gallery .gallery-wrapper .gallery-item {
+  width: 400px;
+  height: 300px;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  margin: 1rem;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+}
+
+main #gallery .gallery-wrapper .gallery-item a {
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+main #gallery .gallery-wrapper .gallery-item a:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
+  opacity: 0;
+  background: rgba(247, 196, 58, 0.67);
+  transition: all .3s ease-in-out;
+}
+
+main #gallery .gallery-wrapper .gallery-item:hover a:after {
+  opacity: 1;
+}
+
+main #services {
+  margin: 4rem 2rem;
+}
+
+main #services #services-cards {
+  padding: 2rem 0 0 0;
+  background: none;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+main #services #services-cards .card {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  box-shadow: none;
+  background: whitesmoke;
+}
+
+main #services #services-cards .card:not(:last-of-type) {
+  margin: 0 0 2rem 0;
+}
+
+main #services #services-cards .card .button {
+  padding: 0;
+}
+
+main #services #services-cards .card .button:hover a {
+  color: #f7c43a;
+}
+
+main #services #services-cards .card .card-img {
+  width: 300px;
+  height: 250px;
+  margin: 0 1rem 0 0;
+}
+
+main #contact {
+  margin: 4rem auto;
+  max-width: 960px;
+}
+
+main #contact .contact-body {
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main #contact .contact-body > div {
+  width: 50%;
+}
+
+main #contact .contact-body .contact-info {
+  font-size: 1rem;
+}
+
+main #contact .contact-body .contact-info a {
+  color: #15161a;
+}
+
+main #contact .contact-body iframe {
+  width: 100%;
+  height: 400px;
+}
+
+footer {
+  background: #15161a;
+  color: whitesmoke;
+  font-weight: 100;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  font-size: 14px;
+  padding: 2rem;
+}
+
+footer h3 {
+  color: #f7c43a;
+  text-transform: uppercase;
+  font-weight: 100;
+  margin-bottom: .5rem;
+}
+
+footer hr {
+  border-color: #373943;
+  margin-bottom: .8rem;
+}
+
+footer ul {
+  margin: 0;
+  padding: 0;
+}
+
+footer ul li {
+  list-style: none;
+}
+
+footer ul li:not(:last-of-type) {
+  margin-bottom: .3rem;
+}
+
+footer ul li a {
+  color: whitesmoke;
+  text-decoration: none;
+  transition: .3s ease-in-out;
+}
+
+footer ul li a:hover {
+  text-decoration: underline;
+}
+
+footer .sitemap .sitemap-inner {
+  display: -ms-flexbox;
+  display: flex;
+}
+
+footer .sitemap .sitemap-inner ul:first-of-type {
+  margin-right: 1rem;
+  padding-right: 1rem;
+  border-right: solid 1px #8c90a2;
+}
+
+footer .copyright {
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+footer .copyright small {
+  font-weight: 100;
+  display: block;
+  margin-bottom: .5rem;
+  letter-spacing: normal;
+}
+
+footer .copyright span {
+  color: #f7c43a;
+}
+
+footer .copyright .socials {
+  margin-bottom: .5rem;
+}
+
+footer .copyright .socials .fa {
+  cursor: pointer;
+  color: #f7c43a;
+}
+
+footer .copyright .socials .fa-inverse {
+  color: #15161a;
+}
+
+@media print {
+  nav, aside {
+    display: none;
+  }
+}
