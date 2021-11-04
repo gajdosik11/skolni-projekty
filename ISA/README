@@ -1,0 +1,66 @@
+projekt ISA - DNS resolver
+Autor: Jakub Gajdšík (xgajdo24)
+
+Program umožňuje uživateli zasílat DNS serveru dotazy, a zobrazuje zformátované odpovědi na standartní výstup. Program převezme data z argumentů spuštění a vytvoří komunikační socket.
+Data zasílané serveru nejdříve zpracuje do fromy pro DNS komunikaci. Zpracovaná data uloží pomocí struktur do bufferu zprávy a zašle je na server s případnými příznaky.
+Následuje vyčkání na odpověď od serveru a následné zpracování odpovědi do formy, která bude srozumitelně vypsána na standartní výstup.
+
+Výpis hlavičky:
+"Authoritative" zda je adresa v listu názvů tázaného serveru.
+"Recursive" zda byla zpráva zpracována rekurzivně.
+"Truncated" zda byla zpráva zkrácena.
+
+Výpis otázky:
+dotazovaná adresa, typ otázky, třída otázky
+
+Výpis odpovědi:
+Answer, Authority, Additional jsou sekce obsahují odpověď.
+dotazovaná adresa, typ odpovědi, třída odpovědi, data odpovědi
+
+
+Vlastnosti aplikace:
+Program byl úspěšně přeložen i spuštěn na serverem Eva a Merlin. 
+Adresa musí být zadána jako poslední argument programu.
+Při příznaku -x je nutno zadat adresu ve formátu ipv4 nebo ipv6, nelze zadat doménu.
+Program zpracovává pouze data ze serveru typu NS, CNAME, PTR, MX, AAAA (ostatní typy jsou dle mého průzkumu zastaralé a nepoužívají se tak často).
+Pokud do pěti vteřin nedojde zpráva ze serveru, tak program timeoutne.
+
+Přeložení programu:
+Program je přeložen pomocí příkazu "make".
+Příkaz "make clean" smaže soubory vztvořené přeložením.
+Pomocí příkazu "make test" se otestuje základní funkčnost programu s různými argumenty(možná potřeba nastavit práva souboru test.sh na spuštění).
+
+Použití a syntaxe programu:
+Po překladu se vygeneruje soubor "dns", který lze spustit pomocí:
+./dns [-h] [-r] [-x] [-6] -s server [-p port] adresa
+	-s server: Jedná se o ip adresu nebo doménu DNS serveru na který bude dotaz zaslán. Po příznaku musí ihned následovat server.
+	adresa: Dotazovaná adresa na kterou se ptáme, může to být doména či ip adresa viz níže. Adresa musí být zadána jako poslední prvek.
+	-h: Vypíše na standartní výstup nápovědu pro použití programu.
+	-r: Rekurze serveru je vyžadována. Pokud server může, tak zpracovává dotaz rekurzivně, čímž se ptá ostatních serverů na stejný dotak, pokud sám nezná odpověď.
+	-x: Dotaz je reverzní. Namísto argumentu adresy je nutné zadat ip adresu na kterou se ptáme a server nám dá odpověď ve formátu domény.
+	-6: Dotaz je typu AAAA. Tím změníme v otázce typ ip adresy na kterou se dotazujeme z ipv4 na ipv6.
+	-p port: Dotaz bude zaslán na číslo daného portu. Pokud server na tomto portu naslouchá, tak komunikace probíhá identicky jen s jiným portem.
+		 Výchozí port je 53. Po příznaku musí ihned následovat číslo portu.
+Příznaky v "[]" jsou volitelné.
+
+Příklad spuštění:
+./dns -s kazi.fit.vutbr.cz www.vutbr.cz
+
+Přibližný výpis spuštění:
+Authoritative: Yes, Recursive: No, Truncated: No
+Question section (1)
+  www.vutbr.cz., A, IN
+Answer section (1)
+  www.vutbr.cz., A, IN, 300, 147.229.2.90
+Authority section (2)
+  vutbr.cz., NS, IN, 300, pipit.cis.vutbr.cz.
+  vutbr.cz., NS, IN, 300, pipit.cis.vutbr.cz.
+Additional section (0)
+
+Přiložené soubory:
+dns.cpp
+dns.h
+Makefile
+test.sh
+README
+manual.pdf
