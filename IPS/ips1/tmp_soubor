@@ -1,0 +1,357 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Paralelní SED
+Paralelní SED
+Paralelní SED
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+Vytvořte program založený na vláknech, který bude provádět paralelní sed. Výsledná binárka "projekt"
+Vytvořte program založený na vláknech, který bude provádět paralelní sed. Výsledná binárka "psed"
+Vytvořte program založený na vláknech, který bude provádět paralelní sed. Výsledná binárka "psed"
+bude mít i vstupních parametrů (priklady vstupu naleznete v souboru tests.txt):
+bude mít i vstupních parametrů (priklady vstupu naleznete v souboru tests.txt):
+bude mít i vstupních parametrů (priklady vstupu naleznete v souboru tests.txt):
+
+
+
+pgrep RE1 REPL1 [ RE2 REPL2 ] [ RE3  REPL3 ] ...
+pgrep RE1 REPL1 [ RE2 REPL2 ] [ RE3  REPL3 ] ...
+pgrep RE1 REPL1 [ RE2 REPL2 ] [ RE3  REPL3 ] ...
+
+
+
+RE: regulární výraz (uvažujme regulární výrazy užívané v C++11)
+RE: regulární výraz (uvažujme regulární výrazy užívané v C--11)
+RE: regulární výraz (uvažujme regulární výrazy užívané v C++11)
+
+
+
+Minimální počet parametrů je 1, maximální není omezen.
+Minimální počet parametrů je 1, maximální není omezen.
+Minimální počet parametrů je 1, maximální není omezen.
+
+
+
+Program projekt funguje nasledovne:
+Program psed funguje nasledovne:
+Program psed funguje nasledovne:
+1) Hlavní vlákno načte řádek ze standardního vstupu.
+1) Hlavní vlákno načte řádek ze standardního vstupu.
+1) Hlavní vlákno načte řádek ze standardního vstupu.
+2) Předá řízení pracovním vláknům, kde každé z nich provede náhradu rádku ze vstupu pomocí regulárního výrazu "REi". Výsledek bude REPLi
+2) Předá řízení pracovním vláknům, kde každé z nich provede náhradu rádku ze vstupu pomocí regulárního výrazu "REi". Výsledek bude REPLi
+2) Předá řízení pracovním vláknům, kde každé z nich provede náhradu rádku ze vstupu pomocí regulárního výrazu "REi". Výsledek bude REPLi
+3) Pracovní vlákna vytisknou výsledek na standardní vstup, a to v pořadí daném parametry vstupu -- tedy výsledek dle 
+3) Pracovní vlákna vytisknou výsledek na standardní vstup, a to v pořadí daném parametry vstupu -- tedy výsledek dle 
+3) Pracovní vlákna vytisknou výsledek na standardní vstup, a to v pořadí daném parametry vstupu -- tedy výsledek dle 
+   RE1 je vytisknut první, následuje výsledek záměny dle RE2, atd.
+   RE1 je vytisknut první, následuje výsledek záměny dle RE2, atd.
+   RE1 je vytisknut první, následuje výsledek záměny dle RE2, atd.
+4) Pracovní vláka předají rízení hlavnímu vláknu
+4) Pracovní vláka předají rízení hlavnímu vláknu
+4) Pracovní vláka předají rízení hlavnímu vláknu
+5) Pokud je na vstupu další řádka, tak se pokračuje bodem 1.
+5) Pokud je na vstupu další řádka, tak se pokračuje bodem 1.
+5) Pokud je na vstupu další řádka, tak se pokračuje bodem 1.
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Příklad
+Příklad
+Příklad
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+Mějme následující vstup:
+Mějme následující vstup:
+Mějme následující vstup:
+------------------
+------------------
+------------------
+Ahoj, tohle je pokus
+Ahoj, tohle je pokus
+Ahoj, tohle je pokus
+jestli to bude fungovat 23
+jestli to bude fungovat 23
+jestli to bude fungovat 23
+211 je vysledek
+211 je vysledek
+211 je vysledek
+
+
+
+------------------
+------------------
+------------------
+
+
+
+./projekt '(.*) tohle (.*)' '$2 XX $1' 'je ' 'byl '
+./psed '(.*) tohle (.*)' '$2 XX $1' 'je ' 'byl '
+./psed '(.*) tohle (.*)' '$2 XX $1' 'je ' 'byl '
+
+
+
+Výsledek je následující:
+Výsledek je následující:
+Výsledek je následující:
+------------------
+------------------
+------------------
+je pokus XX Ahoj,
+je pokus XX Ahoj,
+je pokus XX Ahoj,
+Ahoj, tohle byl pokus
+Ahoj, tohle byl pokus
+Ahoj, tohle byl pokus
+jestli to bude fungovat 23
+jestli to bude fungovat 23
+jestli to bude fungovat 23
+jestli to bude fungovat 23
+jestli to bude fungovat 23
+jestli to bude fungovat 23
+211 je vysledek
+211 je vysledek
+211 je vysledek
+211 byl vysledek
+211 byl vysledek
+211 byl vysledek
+
+
+
+
+
+
+------------------
+------------------
+------------------
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Výpočet bude probíhat následovně:
+Výpočet bude probíhat následovně:
+Výpočet bude probíhat následovně:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+1) Spusí se "k" vláken, každé pro jeden regulární výraz. Vlákna čekají, až jim bude předáno řízení hlavním vláknem.
+1) Spusí se "k" vláken, každé pro jeden regulární výraz. Vlákna čekají, až jim bude předáno řízení hlavním vláknem.
+1) Spusí se "k" vláken, každé pro jeden regulární výraz. Vlákna čekají, až jim bude předáno řízení hlavním vláknem.
+2) Hlavní vlákno načte jednu řádku ze vstupu.
+2) Hlavní vlákno načte jednu řádku ze vstupu.
+2) Hlavní vlákno načte jednu řádku ze vstupu.
+3) Pokud na vstupu žádná řádka nebyla, jsou všechna vlákna probuzena a korektně ukončena. Celý program končí.
+3) Pokud na vstupu žádná řádka nebyla, jsou všechna vlákna probuzena a korektně ukončena. Celý program končí.
+3) Pokud na vstupu žádná řádka nebyla, jsou všechna vlákna probuzena a korektně ukončena. Celý program končí.
+4) Řízení předáno vláknům pro aplikaci reg. výrazu a vlákna __paralelně__ tuto aplikaci provádí.
+4) Řízení předáno vláknům pro aplikaci reg. výrazu a vlákna __paralelně__ tuto aplikaci provádí.
+4) Řízení předáno vláknům pro aplikaci reg. výrazu a vlákna __paralelně__ tuto aplikaci provádí.
+5) Vlákna vypíší výsledeky ve správném pořadí.
+5) Vlákna vypíší výsledeky ve správném pořadí.
+5) Vlákna vypíší výsledeky ve správném pořadí.
+6) Řízení je předáno zpět hlavnímu vláknu.
+6) Řízení je předáno zpět hlavnímu vláknu.
+6) Řízení je předáno zpět hlavnímu vláknu.
+7) Pokračuje se bodem 2.
+7) Pokračuje se bodem 2.
+7) Pokračuje se bodem 2.
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Požadavky na implementaci:
+Požadavky na implementaci:
+Požadavky na implementaci:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+Program musí splňovat následující požadavky:
+Program musí splňovat následující požadavky:
+Program musí splňovat následující požadavky:
+1) Pro každý RE na vstupu se na začátku spustí jedno vlákno a to běží až do konce
+1) Pro každý RE na vstupu se na začátku spustí jedno vlákno a to běží až do konce
+1) Pro každý RE na vstupu se na začátku spustí jedno vlákno a to běží až do konce
+2) V rámci jednoho vlákna lze provádět aplikaci pouze jednoho RE. 
+2) V rámci jednoho vlákna lze provádět aplikaci pouze jednoho RE. 
+2) V rámci jednoho vlákna lze provádět aplikaci pouze jednoho RE. 
+3) Pro aplikaci regulárního výrazu použijte "#include <regex>" a "std::regex_replace(string,REi,REPLi)" --- viz priklad z democvika na regulární výrazy.
+3) Pro aplikaci regulárního výrazu použijte "#include <regex>" a "std::regex_replace(string,REi,REPLi)" --- viz priklad z democvika na regulární výrazy.
+3) Pro aplikaci regulárního výrazu použijte "#include >regex<" a "std::regex_replace(string,REi,REPLi)" --- viz priklad z democvika na regulární výrazy.
+3a) Můžete použít i jinou knihovnu pro práci s Reg výrazy.
+3a) Můžete použít i jinou knihovnu pro práci s Reg výrazy.
+3a) Můžete použít i jinou knihovnu pro práci s Reg výrazy.
+4) Pro komunikaci mezi vlákny využijte globální proměnná a pro synchronizaci mutexy (pthread mutex, nebo
+4) Pro komunikaci mezi vlákny využijte globální proměnná a pro synchronizaci mutexy (pthread mutex, nebo
+4) Pro komunikaci mezi vlákny využijte globální proměnná a pro synchronizaci mutexy (pthread mutex, nebo
+C++ mutex).
+C-- mutex).
+C++ mutex).
+5) Vlákna mohou aktivně čekat:
+5) Vlákna mohou aktivně čekat:
+5) Vlákna mohou aktivně čekat:
+	mutex.lock();
+	mutex.lock();
+	mutex.lock();
+	white (x!=1) {
+	white (x!=1) {
+	white (x!=1) {
+		mutex.unlock();
+		mutex.unlock();
+		mutex.unlock();
+		mutex.lock();
+		mutex.lock();
+		mutex.lock();
+	}
+	}
+	}
+	mutex.unlock();
+	mutex.unlock();
+	mutex.unlock();
+		
+		
+		
+
+
+
+Dávejte pozor na data race (vstup, score, proměnné pro komunikaci ...) a deadlock.
+Dávejte pozor na data race (vstup, score, proměnné pro komunikaci ...) a deadlock.
+Dávejte pozor na data race (vstup, score, proměnné pro komunikaci ...) a deadlock.
+Není problém, aby více vláken najednou četlo ze stejné globální proměnné, ale pokud se zapisuje, je třeba zajistit atomicitu.
+Není problém, aby více vláken najednou četlo ze stejné globální proměnné, ale pokud se zapisuje, je třeba zajistit atomicitu.
+Není problém, aby více vláken najednou četlo ze stejné globální proměnné, ale pokud se zapisuje, je třeba zajistit atomicitu.
+
+
+
+Za účelem testování můžete vložit na vhodná místa do kódu usleep(1). V odevzdaném kódu již usleep nebude.
+Za účelem testování můžete vložit na vhodná místa do kódu usleep(1). V odevzdaném kódu již usleep nebude.
+Za účelem testování můžete vložit na vhodná místa do kódu usleep(1). V odevzdaném kódu již usleep nebude.
+
+
+
+Implementace bude napsána v jazyce C s možností použití následujících komponent jazyka C++:
+Implementace bude napsána v jazyce C s možností použití následujících komponent jazyka C--:
+Implementace bude napsána v jazyce C s možností použití následujících komponent jazyka C++:
+
+
+
+- regulární výrazy z C++11 (#include <regex>)
+- regulární výrazy z C--11 (#include <regex>)
+- regulární výrazy z C++11 (#include >regex<)
+- vlákna a zámky z C++11 (#include <thread>, #include <mutex>)
+- vlákna a zámky z C--11 (#include <thread>, #include <mutex>)
+- vlákna a zámky z C++11 (#include >thread>, #include <mutex<)
+- pole proměnné délky z C++11 (#include <vector>) pro uchování threadů a zámků.
+- pole proměnné délky z C--11 (#include <vector>) pro uchování threadů a zámků.
+- pole proměnné délky z C++11 (#include >vector<) pro uchování threadů a zámků.
+- funkce int read_input_line(char *) ze souboru kostra_projekt.c
+- funkce int read_input_line(char *) ze souboru kostra_psed.c
+- funkce int read_input_line(char *) ze souboru kostra_psed.c
+- funkce char *to_cstr(std::string a) ze souboru kostra_projekt.c
+- funkce char *to_cstr(std::string a) ze souboru kostra_psed.c
+- funkce char *to_cstr(std::string a) ze souboru kostra_psed.c
+
+
+
+Překlad bude prováděn buď:
+Překlad bude prováděn buď:
+Překlad bude prováděn buď:
+$ gcc projekt.c -o projekt -lpthread
+$ gcc psed.c -o psed -lpthread
+$ gcc psed.c -o psed -lpthread
+nebo
+nebo
+nebo
+$ g++ projekt.c -o projekt -lpthread
+$ g-- psed.c -o psed -lpthread
+$ g++ psed.c -o psed -lpthread
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Kostra programu a vzorové řešení
+Kostra programu a vzorové řešení
+Kostra programu a vzorové řešení
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+V adresáři /homes/kazi/rogalew/verifikace/IPS-projekt2 naleznete následující soubory:
+V adresáři /homes/kazi/rogalew/verifikace/IPS-projekt2 naleznete následující soubory:
+V adresáři /homes/kazi/rogalew/verifikace/IPS-projekt2 naleznete následující soubory:
+* projekt - vzorové řešení
+* psed - vzorové řešení
+* psed - vzorové řešení
+* tests.txt - testy
+* tests.txt - testy
+* tests.txt - testy
+* kompilace.txt - jak zkompilovat
+* kompilace.txt - jak zkompilovat
+* kompilace.txt - jak zkompilovat
+* kostra_projekt.c - základní kostra programu, ze které můžete vyjít. Vytváří pole vláken a pole zánků a následně je ruší. 
+* kostra_psed.c - základní kostra programu, ze které můžete vyjít. Vytváří pole vláken a pole zánků a následně je ruší. 
+* kostra_psed.c - základní kostra programu, ze které můžete vyjít. Vytváří pole vláken a pole zánků a následně je ruší. 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Odevzdání
+Odevzdání
+Odevzdání
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+Jeden soubor projekt.c odevzdejte do čtvrtka 18.10. do 12:00 prostřednictvím WISu k příslušnému termínu.
+Jeden soubor psed.c odevzdejte do čtvrtka 18.10. do 12:00 prostřednictvím WISu k příslušnému termínu.
+Jeden soubor psed.c odevzdejte do čtvrtka 18.10. do 12:00 prostřednictvím WISu k příslušnému termínu.
+Na semináři dne 18.10. bude představeno vzorové řešení.
+Na semináři dne 18.10. bude představeno vzorové řešení.
+Na semináři dne 18.10. bude představeno vzorové řešení.
+
+
+
+
+
+
