@@ -1,0 +1,7 @@
+Archive:  xgajdo24.zip
+  inflating: interpret.py            
+  inflating: readme2.pdf             
+  inflating: test.php                
+Program interpretuje kod xml s pomocnymi parametry --source=code.xml --input=input.txt
+ default je stdin
+Nedokazal jsem dokoncit implementaci
