@@ -1,0 +1,46 @@
+<!---Autoøi: xmarek69, xbilid01, xgajdo24 --->
+<header >
+<div class="content-wrapper-header">
+
+
+	<?php
+
+	    $sklad="";
+	    $prijem="";
+	    $vydej="";
+	    $historie="";
+	    $sprava="";
+	    $nastaveni="";
+	    if(isset($_GET) && isset($_GET['akce'])){
+	        if($_GET['akce'] == "sklad")
+	            $sklad = "active";
+	        if($_GET['akce'] == "prijem")
+	            $prijem = "active";
+	        if($_GET['akce'] == "vydej")
+	            $vydej = "active";
+	        if($_GET['akce'] == "historie")
+	            $historie = "active";
+	        if($_GET['akce'] == "nastaveni")
+	            $nastaveni = "active";
+	    }else{
+	        $sklad = "active";
+	    }
+	?>
+	<nav class="">
+		<div class="nav-button nav1" id="<?php echo $sklad;?>">
+	    <a class="btn btn-secondary" href="?akce=sklad" >Sklad</a></div>
+	    <div class="nav-button nav2" id="<?php echo $prijem;?>">
+	    <a class="btn btn-secondary" href="?akce=prijem" >Pøíjem zbo¾í</a></div>
+	    <div class="nav-button nav3" id="<?php echo $vydej;?>">
+	    <a class="btn btn-secondary" href="?akce=vydej" >Výdej zbo¾í</a></div>
+	    <div class="nav-button nav4" id="<?php echo $historie;?>">
+	    <a class="btn btn-secondary" href="?akce=historie" >Historie</a></div>
+	</nav>
+	<div id="user_bar">
+		<div class="nav-button" id="<?php echo $nastaveni;?>">
+	    <a class="btn btn-secondary" href="index.php?akce=nastaveni"><img src="img/settings.png"></a></div>
+	    <div class="nav-button">    
+	    <a class="btn btn-secondary" href="php/include/logout.php"><img src="img/logout.png"></a></div>
+	</div>
+</div>
+</header>

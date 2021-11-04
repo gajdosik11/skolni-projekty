@@ -1,0 +1,22 @@
+<!---Autoøi: xmarek69, xbilid01, xgajdo24 --->
+<main id="sklad">
+
+	<div class="form-group modal-content" id="login">
+	    <form method="post">
+	        <h2>Pøihlá¹ení</h2>
+	        <p class="hint">U¾ivatelské jméno:</p>
+	        <input class="form-control" type="text" name="username" placeholder="login"/ autofocus>
+	        <p class="hint">Heslo:</p>
+	        <input class="form-control" type="password" name="password" placeholder="heslo"/>
+    		<? if($spatne_heslo == 1){ ?>
+	    		<p class='error'>©patné pøihla¹ovací údaje!</p>
+    		<? } ?>
+	        <input class="btn btn-secondary" type="submit" name="login" value="Pøihlásit">
+    		<div class="btn btn-secondary" id="no_account">
+    			<a href="?akce=registrace">Registrace</a>
+    		</div>
+	    </form>
+
+	</div>
+
+</main>
