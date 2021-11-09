@@ -1,0 +1,94 @@
+[debug] [2021-05-10T21:28:27.712Z] ----------------------------------------------------------------------
+[debug] [2021-05-10T21:28:27.713Z] Command:       /Users/ezo/.nvm/versions/node/v10.16.0/bin/node /Users/ezo/.nvm/versions/node/v10.16.0/bin/firebase deploy --only functions
+[debug] [2021-05-10T21:28:27.714Z] CLI Version:   7.6.1
+[debug] [2021-05-10T21:28:27.714Z] Platform:      darwin
+[debug] [2021-05-10T21:28:27.714Z] Node Version:  v10.16.0
+[debug] [2021-05-10T21:28:27.715Z] Time:          Mon May 10 2021 23:28:27 GMT+0200 (Central European Summer Time)
+[debug] [2021-05-10T21:28:27.715Z] ----------------------------------------------------------------------
+[debug] [2021-05-10T21:28:27.715Z] 
+[debug] [2021-05-10T21:28:27.723Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-05-10T21:28:27.723Z] > authorizing via signed-in user
+[debug] [2021-05-10T21:28:27.723Z] [iam] checking project ticketeer-4d3d3 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2021-05-10T21:28:27.725Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/ticketeer-4d3d3:testIamPermissions  
+
+[debug] [2021-05-10T21:28:28.803Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'ticketeer-4d3d3'...
+[info] 
+[info] i  deploying functions
+[debug] [2021-05-10T21:28:30.846Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "tslint --project tsconfig.json",
+    "build": "tsc --w --skipLibCheck",
+    "serve": "firebase serve --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "8"
+  },
+  "main": "lib/functions/src/index.js",
+  "dependencies": {
+    "@sendgrid/mail": "^6.4.0",
+    "braintree": "^2.22.0",
+    "cors": "^2.8.5",
+    "firebase": "^7.6.1",
+    "firebase-admin": "^8.6.0",
+    "firebase-functions": "^3.3.0",
+    "node-fetch": "^2.6.1",
+    "pdfkit": "^0.11.0",
+    "qrcode": "^1.4.4"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^0.1.6",
+    "tslint": "^5.12.0",
+    "typescript": "^3.2.2"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[debug] [2021-05-10T21:28:30.848Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/ticketeer-4d3d3/services/cloudfunctions.googleapis.com  
+ 
+[debug] [2021-05-10T21:28:30.848Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/ticketeer-4d3d3/services/runtimeconfig.googleapis.com  
+ 
+[debug] [2021-05-10T21:28:31.804Z] <<< HTTP RESPONSE 200
+[debug] [2021-05-10T21:28:31.827Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: all necessary APIs are enabled
+[debug] [2021-05-10T21:28:31.828Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/ticketeer-4d3d3/adminSdkConfig  
+ 
+[debug] [2021-05-10T21:28:32.212Z] <<< HTTP RESPONSE 200
+[info] i  functions: preparing functions directory for uploading...
+[debug] [2021-05-10T21:28:32.213Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/ticketeer-4d3d3/configs  
+ 
+[debug] [2021-05-10T21:28:32.431Z] <<< HTTP RESPONSE 200
+[debug] [2021-05-10T21:28:32.432Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/ticketeer-4d3d3/configs/sendgrid/variables  
+ 
+[debug] [2021-05-10T21:28:32.827Z] <<< HTTP RESPONSE 200
+[debug] [2021-05-10T21:28:32.828Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/ticketeer-4d3d3/configs/sendgrid/variables/key  
+ 
+[debug] [2021-05-10T21:28:32.828Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/ticketeer-4d3d3/configs/sendgrid/variables/template  
+ 
+[debug] [2021-05-10T21:28:33.038Z] <<< HTTP RESPONSE 200
+[debug] [2021-05-10T21:28:33.065Z] <<< HTTP RESPONSE 200
+[info] i  functions: packaged functions (112.16 KB) for uploading
+[debug] [2021-05-10T21:28:33.761Z] >>> HTTP REQUEST POST https://cloudfunctions.googleapis.com/v1/projects/ticketeer-4d3d3/locations/us-central1/functions:generateUploadUrl  
+ 
+[debug] [2021-05-10T21:28:34.213Z] <<< HTTP RESPONSE 200
+[debug] [2021-05-10T21:28:34.213Z] >>> HTTP REQUEST PUT https://storage.googleapis.com/gcf-upload-us-central1-41a75b72-522f-4876-8352-a76802f585f1/bb0e7ef1-8196-473b-8de5-318be8326562.zip?GoogleAccessId=service-728183647004@gcf-admin-robot.iam.gserviceaccount.com&Expires=1620683914&Signature=tG2w0m46bS6BtmU9Ev8rNkN%2F0dbYW4CN7jnA0e8nGpb8ATp6lHZtkm6xeNB83bQE%2BVBILx3jeLFX%2FvrbA2cXLQxOjG%2BrqJdePokpIf%2BtbehNxQ2HPuiMy43xd6fo7ll1jYkw4TML%2FBDU7qMbK9DkOaAST1WgrCqXF5uU44LsY4GgMOw0KeYBWJqb%2BS1nD0W2cNlOYVUAI6hGTR4z7%2B46uKv9ufgkbV%2BYcpTsis%2BiUjOXIFwFp9e1BTKHzYWPv%2BwfTnIOekOb3VLmUVANhebUX5c%2B0TsLyqy06%2BzRnTarJNKz5okfafaiHIKLJshKV2xMqvtoq3MP%2BjxlWagn4yKYFQ%3D%3D  
+ <request body omitted>
+[debug] [2021-05-10T21:28:34.507Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: functions folder uploaded successfully
+[debug] [2021-05-10T21:28:34.509Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/ticketeer-4d3d3/locations/-/functions  
+ 
+[debug] [2021-05-10T21:28:34.987Z] <<< HTTP RESPONSE 200
+[info] i  functions: updating Node.js 8 function getClientToken(us-central1)...
+[debug] [2021-05-10T21:28:34.989Z] Trigger is:  {"httpsTrigger":{}}
+[info] i  functions: updating Node.js 8 function createPurchase(us-central1)...
+[debug] [2021-05-10T21:28:34.989Z] Trigger is:  {"httpsTrigger":{}}
+[info] i  functions: updating Node.js 8 function markWaveAsSoldOut(us-central1)...
+[debug] [2021-05-10T21:28:34.990Z] Trigger is:  {"eventTrigger":{"resource":"projects/ticketeer-4d3d3/databases/(default)/documents/tickets/{ticketId}","eventType":"providers/cloud.firestore/eventTypes/document.update","service":"firestore.googleapis.com"}}
+[debug] [2021-05-10T21:28:34.990Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/ticketeer-4d3d3/services/cloudscheduler.googleapis.com  
+ 

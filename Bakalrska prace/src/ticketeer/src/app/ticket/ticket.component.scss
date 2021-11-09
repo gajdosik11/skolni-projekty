@@ -1,0 +1,177 @@
+/* xgajdo24
+* stylování pro komponentu TicketComponent
+*/
+@import '../../assets/scss/helpers';
+@import '~@angular/material/theming';
+
+ngx-auth-firebaseui-avatar {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+}
+
+
+:host {
+    display: block !important;
+}
+
+.full-screen-overlay {
+    display: flex;
+    background: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100vw;
+    min-height: 100vh;
+    height: 100%;
+    overflow-y: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.main-content {
+    width: 100%;
+}
+
+.close-button {
+    position: fixed;
+    z-index: 9999;
+    right: 1rem;
+    top: 1rem;
+}
+
+
+//braintree
+.braintree-show-card {
+    padding-top: 1.5rem;
+}
+
+.braintree-sheet__header-label {
+    display: none !important;
+}
+
+.braintree-sheet__header {
+    border: none;
+    background: transparent;
+    justify-content: flex-end;
+}
+
+.braintree-sheet {
+    border: none;
+    background: transparent;
+}
+
+.braintree-upper-container:before {
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+}
+
+#braintree-wrapper {
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex-direction: column;
+    align-items: center;
+
+    .mat-button {
+        font-size: 20px;
+        padding: 1rem 2rem;
+    }
+}
+
+#braintree-added-cancel-button {
+    position: relative;
+    top: -3.8rem;
+    left: 2rem;
+    height: 40px;
+    padding: 1px 6px;
+    display: block;
+    white-space: nowrap;
+    line-height: 40px;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+    text-decoration: none;
+}
+
+ngx-braintree {
+    width: 100%;
+    height: 100%;
+    align-self: center;
+    background: #fff;
+    display: block;
+    padding: 1rem;
+
+    button {
+        margin-left: auto;
+        display: block;
+        margin-right: 10px;
+        margin-bottom: 5px;
+        background-color: #3f51b5 !important;
+        white-space: nowrap;
+        height: 40px;
+        line-height: 40px;
+        box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
+        border-radius: 4px;
+        font-size: 15px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: .025em;
+        text-decoration: none;
+        transition: all .15s ease;
+
+        &:disabled {
+            opacity: .5;
+        }
+    }
+}
+
+.braintree-placeholder {
+    display: none;
+}
+
+.braintree-sheet__container {
+    margin: 0;
+}
+
+
+.margin-top {
+    margin-top: 1rem !important;
+}
+
+.margin-right {
+    margin-right: 1rem !important;
+}
+
+.margin-bottom {
+    margin-bottom: 1rem !important;
+}
+
+.margin-left {
+    margin-left: 1rem !important;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.flex-right {
+    align-self: flex-end;
+}
+
+.flex-left {
+    align-self: flex-start;
+}
+
+

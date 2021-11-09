@@ -1,0 +1,151 @@
+<!--xgajdo24
+šablonová část proprodej vstupenky
+-->
+<div class="main-content">
+    <ng-container [ngSwitch]="ticketState">
+        <!-- úvodní strana která robzaruje pořet vstupenek, obsahuje logiku pro zobrazení ruzných zpráv podle počtu vstupenek-->
+        <ng-container *ngSwitchCase="'MAINPAGE'">
+            <ng-container *ngIf="wave$ | async as wave; else soldOut">
+                <p *ngIf="(ticketCount$ | async) == 1">Zbývá {{ ticketCount$ | async }} vstupenka, za cenu {{ (ticket$ | async)?.price }} Kč</p>
+                <p *ngIf="(ticketCount$ | async) >= 2 && (ticketCount$ | async) <= 4">
+                    Zbývjí {{ ticketCount$ | async }} vstupenky, za cenu {{ (ticket$ | async)?.price }} Kč
+                </p>
+                <p *ngIf="(ticketCount$ | async) >= 5">Zbývá {{ ticketCount$ | async }} vstupenek, za cenu {{ (ticket$ | async)?.price }} Kč</p>
+                <ng-container *ngIf="ticket$ | async as ticket">
+                    <ng-container *ngIf="!(user$ | async); else authenticated">
+                        <p *ngIf="!(user$ | async)" class="mat-small">*Pro zakoupeni je nutné se přihlásit.</p>
+                    </ng-container>
+                    <!-- pokud je uživatel přihlášen může rovnou nakupovat, nebo si zobrazit dostupné vstupenky -->
+                    <ng-template #authenticated>
+                        <div class="text-right">
+                            <button color="primary" mat-stroked-button (click)="requestTicket(ticket)" class="margin-right">Zakoupit</button>
+
+                            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                                <mat-icon>more_vert</mat-icon>
+                            </button>
+                            <mat-menu #menu="matMenu">
+                                <button mat-menu-item (click)="displayMyTickets()">
+                                    <mat-icon>local_activity</mat-icon>
+                                    <span>Zobrazit zakoupené vstupenky</span>
+                                </button>
+                                <button mat-menu-item (click)="logout()">
+                                    <mat-icon>logout</mat-icon>
+                                    <span>Odhlásit se</span>
+                                </button>
+                            </mat-menu>
+                        </div>
+                    </ng-template>
+                </ng-container>
+            </ng-container>
+            <ng-template #soldOut>
+                Omlouváme se, událost je vyprodána.
+            </ng-template>
+        </ng-container>
+        <!-- zde se zobrazí vygenerované vstupenky s grafikou -->
+        <ng-container *ngSwitchCase="'DISPLAY_MY_TICKETS'">
+            <div class="full-screen-overlay">
+                <!-- toto je vue web komponenta a té přeposíláme datat o vstupenkách-->
+                <printable-tickets [tickets]="ticketsUserOwns" style="display: block" id="pritable-ticket"></printable-tickets>
+
+                <button mat-icon-button (click)="goToMainPage()" class="close-button">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </div>
+        </ng-container>
+        <!-- zde se uživateli zobrazí přihlašovací/rigistrační okno -->
+        <ng-container *ngSwitchCase="'AUTHENTICATION'">
+            <ngx-auth-firebaseui-login
+                class="full-screen-overlay"
+                *ngIf="!register"
+                (onCreateAccountRequested)="register = !register"
+                (onSuccess)="goToMainPage()"
+                [resetPasswordEnabled]="false"
+                [registrationEnabled]="true"
+                [providers]="['google', 'facebook']"
+                [titleText]="'Přihlášení'"
+                [messageOnAuthSuccess]="'Vitejte'"
+                [orLabelText]="'nebo'"
+                [dontHaveAnAccountText]="'Nemáte účet ?'"
+                [createAccountButtonText]="'Vytvořit účet'"
+                [emailErrorRequiredText]="'Email je vyžadován'"
+                [emailErrorPatternText]="'Špatný formát emailu'"
+                [passwordText]="'Heslo'"
+                [passwordErrorRequiredText]="'Heslo je vyžadováno'"
+            ></ngx-auth-firebaseui-login>
+            <ngx-auth-firebaseui-register
+                *ngIf="register"
+                (onSuccess)="goToMainPage()"
+                (onLoginRequested)="register = !register"
+                [titleText]="'Registrace'"
+                [createAccountButtonText]="'Vytvořit účet'"
+                [nameText]="'Jméno'"
+                [nameErrorRequiredText]="'Jméno je vyžadováno'"
+                [emailErrorRequiredText]="'Email je vyžadován'"
+                [emailErrorPatternText]="'Špatný formát emailu'"
+                [passwordText]="'Heslo'"
+                [passwordConfirmationText]="'Potvrzení hesla'"
+                [passwordErrorRequiredText]="'Heslo je vyžadováno'"
+                [passwordConfirmationErrorRequiredText]="'Potvrzení hesla je vyžadováno'"
+                [passwordErrorMatchText]="'Hesla nesouhlasí'"
+                [alreadyHaveAccountText]="'Máte již účet ?'"
+                loginButtonText="Přihlásit se / Zakoupit"
+            ></ngx-auth-firebaseui-register>
+            <button mat-icon-button (click)="goToMainPage()" class="close-button">
+                <mat-icon>close</mat-icon>
+            </button>
+        </ng-container>
+        <!-- fáze s platební bránou -->
+        <ng-container *ngSwitchCase="'PAYING'">
+            <!-- 2223000048400011 je testovací číslo účtu pro upěšný nákup-->
+            <app-timeout [hidden]="true" [timeout]="600" (timeoutEnded)="goToMainPage()"></app-timeout>
+            <ngx-braintree
+                class="full-screen-overlay"
+                [getClientToken]="getClientToken.bind(this)"
+                [createPurchase]="createPurchase.bind(this)"
+                [chargeAmount]="ticket.price"
+                (paymentStatus)="onPaymentStatus($event)"
+                (error)="goToMainPage()"
+                [buttonText]="'Zaplatit'"
+                [currency]="'CZK'"
+                [locale]="'cs_CZ'"
+            >
+            </ngx-braintree>
+            <button mat-icon-button (click)="goToMainPage()" class="close-button">
+                <mat-icon>close</mat-icon>
+            </button>
+        </ng-container>
+        <!-- pokud byla platab úspěšná -->
+        <div *ngSwitchCase="'PAIDSUCESS'" class="full-screen-overlay">
+            <div class="text-center">
+                <!-- animace úspěšného nákupu -->
+                <app-sweet-alert-success></app-sweet-alert-success>
+                <br />
+                <br />
+                <p>Vstupenka byla zaslána na váš email.</p>
+                <p>
+                    Toto okno vyprší za
+                    <app-timeout [timeout]="30" (timeoutEnded)="goToMainPage()"></app-timeout>
+                    s
+                </p>
+                <br />
+                <br />
+                <!-- další instance vue web komponenty v tomto případě zobrazí pouze zakoupenou vstupenku -->
+                <printable-tickets [tickets]="ticketsUserJustBought" style="display: block" id="pritable-ticket"></printable-tickets>
+
+                <button mat-icon-button (click)="goToMainPage()" class="close-button">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </div>
+        </div>
+        <!-- transakce neproběhla v pořádku -->
+        <ng-container *ngSwitchCase="'PAIDERROR'">
+            <app-sweet-alert-warning></app-sweet-alert-warning>
+            <app-timeout [timeout]="10" (timeoutEnded)="goToMainPage()"></app-timeout>
+            <p>Nastala chyba při platbě.<br />Za chvíli budete přesměrování na úvodní stránku kde můžete objednávku zopakovat.</p>
+        </ng-container>
+    </ng-container>
+</div>
+
+<div *ngIf="!(user$ | async)" fxFlex class="text-right margin-top">
+    <button color="primary" mat-stroked-button (click)="goToAuthentication()" class="margin-right">Přihlásit se a zakoupit</button>
+</div>

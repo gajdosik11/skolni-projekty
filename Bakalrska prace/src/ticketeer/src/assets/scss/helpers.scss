@@ -1,0 +1,79 @@
+html,
+body {
+    height: 100%;
+}
+*:not(.mat-icon) {
+    margin: 0;
+    font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+.margin-top {
+    margin-top: 1rem !important;
+}
+
+.margin-right {
+    margin-right: 1rem !important;
+}
+
+.margin-bottom {
+    margin-bottom: 1rem !important;
+}
+
+.margin-left {
+    margin-left: 1rem !important;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.flex-right {
+    align-self: flex-end;
+}
+
+.flex-left {
+    align-self: flex-start;
+}
+
+//fontAwesome
+.fa-times {
+    margin-left: 2.3rem;
+    color: #f44336;
+}
+
+.fa-check {
+    margin-left: 2.3rem;
+    color: forestgreen;
+}
+
+.fa-info {
+    color: #3f51b5;
+    margin-left: 2.9rem;
+    cursor: pointer;
+}
+
+.mat-dialog-title {
+    margin: 0 !important;
+}
+
+.mat-dialog-content {
+    .add-button-spacing {
+        padding: 0 2rem 1rem 1rem;
+    }
+}
+
+.mat-cell {
+    .mat-stroked-button {
+        padding: 0 5px;
+        font-size: small;
+    }
+}
+
+.mat-table {
+    width: 100%;
+}
+

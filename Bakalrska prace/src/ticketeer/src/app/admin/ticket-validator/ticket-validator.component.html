@@ -1,0 +1,32 @@
+<!-- xgajdo24
+ zde se používá kompoennta AppCodeReader, která nám předá kód z čtečky
+ kód se dá také zadat manuálně
+ na základě srovnání zobrazíme patřičnou animaci a zprávu
+ -->
+<ng-container [ngSwitch]="access">
+    <ng-container *ngSwitchCase="0">
+        <app-sweet-alert-success></app-sweet-alert-success>
+    </ng-container>
+    <ng-container *ngSwitchCase="1">
+        <app-sweet-alert-warning></app-sweet-alert-warning>
+        <p>Zamítnuto</p>
+    </ng-container>
+    <ng-container *ngSwitchCase="2">
+        <app-sweet-alert-warning></app-sweet-alert-warning>
+        <p>Vstupenka byla použita</p>
+    </ng-container>
+    <ng-container *ngSwitchCase="3">
+        <app-sweet-alert-warning></app-sweet-alert-warning>
+        <p>Není zaplacená</p>
+    </ng-container>
+    <ng-container *ngSwitchCase="4">
+        <p>Naskenujte Kód</p>
+    </ng-container>
+</ng-container>
+<br />
+<br />
+<div fxLayout fxLayoutGap="1rem">
+    <input name="code" [(ngModel)]="code" /><button mat-button mat-flat-button color="primary" (click)="onCodeScan(code)">Otestovat</button>
+</div>
+
+<app-code-reader [codeScanCallback]="onCodeScan.bind(this)"></app-code-reader>

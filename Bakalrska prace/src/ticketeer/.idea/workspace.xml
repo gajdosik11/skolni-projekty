@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a0cd9a0b-9166-4c3f-bd10-a9e3aec22fa8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/functions/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/admin/admin.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/admin/admin.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/admin/admin.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/admin/admin.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/admin/admin.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/admin/admin.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/admin/admin.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/admin/admin.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/admin/ticket-event-table/create-or-edit-ticket-event-dialog/create-or-edit-ticket-event-dialog.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/admin/ticket-event-table/create-or-edit-ticket-event-dialog/create-or-edit-ticket-event-dialog.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/admin/ticket-event-table/create-or-edit-ticket-event-dialog/create-or-edit-ticket-event-dialog.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/admin/ticket-event-table/create-or-edit-ticket-event-dialog/create-or-edit-ticket-event-dialog.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/admin/ticket-event-table/ticket-event-table.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/admin/ticket-event-table/ticket-event-table.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/admin/ticket-event-table/ticket-event-table.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/admin/ticket-event-table/ticket-event-table.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/admin/ticket-validator/ticket-validator.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/admin/ticket-validator/ticket-validator.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/admin/ticket-validator/ticket-validator.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/admin/ticket-validator/ticket-validator.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shared/code-reader.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/code-reader.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shared/code-reader/code-reader.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/code-reader/code-reader.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shared/date-adapter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/date-adapter.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shared/forms/abstract-form-control.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/forms/abstract-form-control.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shared/forms/date-period-validator.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/forms/date-period-validator.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shared/forms/datepicker.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/forms/datepicker.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shared/forms/input.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/forms/input.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shared/forms/validation-errors.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/forms/validation-errors.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shared/loader/loader.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/loader/loader.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shared/shared.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/shared.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shared/sweet-alert/sweet-alert.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/sweet-alert/sweet-alert.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shared/ticket-event.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/ticket-event.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shared/ticket.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/ticket.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shared/timeout/timeout.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/timeout/timeout.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shared/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/utils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/ticket/ticket.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/ticket/ticket.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/ticket/ticket.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/ticket/ticket.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/ticket/ticket.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/ticket/ticket.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.html" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="ProjectId" id="1YIrhO57C1NCnLxOkiroeECrN2T" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/app/libs" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/app/libs" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="npm.Angular CLI Server">
+    <configuration name="E2E Tests (ticketeer)" type="JavaScriptTestRunnerProtractor">
+      <config-file value="$PROJECT_DIR$/e2e/protractor.conf.js" />
+      <node-interpreter value="project" />
+      <protractor-options value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular CLI Server" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a0cd9a0b-9166-4c3f-bd10-a9e3aec22fa8" name="Default Changelist" comment="" />
+      <created>1582645267045</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1582645267045</updated>
+      <workItem from="1582645298116" duration="3291000" />
+      <workItem from="1582725978774" duration="599000" />
+      <workItem from="1582811124271" duration="7141000" />
+      <workItem from="1583156780371" duration="1328000" />
+      <workItem from="1583158145847" duration="12517000" />
+      <workItem from="1583242522601" duration="1170000" />
+      <workItem from="1583334773677" duration="3782000" />
+      <workItem from="1583416875531" duration="15315000" />
+      <workItem from="1583769486717" duration="11053000" />
+      <workItem from="1584017373971" duration="126000" />
+      <workItem from="1584109584882" duration="1233000" />
+      <workItem from="1584274656806" duration="10815000" />
+      <workItem from="1584363858733" duration="19781000" />
+      <workItem from="1584465236453" duration="10298000" />
+      <workItem from="1584632390191" duration="10389000" />
+      <workItem from="1584810040520" duration="17505000" />
+      <workItem from="1584989728668" duration="6113000" />
+      <workItem from="1585061585867" duration="23321000" />
+      <workItem from="1585411956243" duration="9345000" />
+      <workItem from="1585565865389" duration="13864000" />
+      <workItem from="1585656039053" duration="11110000" />
+      <workItem from="1585744744306" duration="11026000" />
+      <workItem from="1585914577197" duration="4714000" />
+      <workItem from="1585992219428" duration="14180000" />
+      <workItem from="1586077363279" duration="13152000" />
+      <workItem from="1586172636270" duration="17622000" />
+      <workItem from="1586258475247" duration="18053000" />
+      <workItem from="1586337813960" duration="1414000" />
+      <workItem from="1586530423430" duration="2961000" />
+      <workItem from="1586716733105" duration="8785000" />
+      <workItem from="1586770249602" duration="7631000" />
+      <workItem from="1586851216701" duration="16280000" />
+      <workItem from="1586941532606" duration="7587000" />
+      <workItem from="1587127507051" duration="10819000" />
+      <workItem from="1587320196974" duration="8367000" />
+      <workItem from="1587374261963" duration="1791000" />
+      <workItem from="1587464792198" duration="3962000" />
+      <workItem from="1587553871126" duration="3104000" />
+      <workItem from="1587630055783" duration="16374000" />
+      <workItem from="1587802672726" duration="18172000" />
+      <workItem from="1587883042719" duration="5782000" />
+      <workItem from="1588008386503" duration="5000" />
+      <workItem from="1588074973656" duration="18981000" />
+      <workItem from="1588256931219" duration="2760000" />
+      <workItem from="1602152437090" duration="14878000" />
+      <workItem from="1602255225862" duration="7482000" />
+      <workItem from="1602276616581" duration="3983000" />
+      <workItem from="1602500017643" duration="9674000" />
+      <workItem from="1602575284252" duration="17281000" />
+      <workItem from="1602753084444" duration="2384000" />
+      <workItem from="1602923727341" duration="13246000" />
+      <workItem from="1603005452073" duration="6112000" />
+      <workItem from="1604220256539" duration="4315000" />
+      <workItem from="1604317325112" duration="9662000" />
+      <workItem from="1604663062329" duration="532000" />
+      <workItem from="1604911433460" duration="8690000" />
+      <workItem from="1605197790142" duration="7804000" />
+      <workItem from="1606388194080" duration="8651000" />
+      <workItem from="1607612900707" duration="7670000" />
+      <workItem from="1608122586372" duration="1211000" />
+      <workItem from="1608199495902" duration="3469000" />
+      <workItem from="1611662044421" duration="6624000" />
+      <workItem from="1612873020957" duration="7240000" />
+      <workItem from="1613044873493" duration="618000" />
+      <workItem from="1614854605452" duration="615000" />
+      <workItem from="1615452988766" duration="126000" />
+      <workItem from="1615808289584" duration="600000" />
+      <workItem from="1615888810766" duration="2850000" />
+      <workItem from="1617464999443" duration="2220000" />
+      <workItem from="1619034479036" duration="1534000" />
+      <workItem from="1620765208066" duration="5340000" />
+      <workItem from="1620804259445" duration="3136000" />
+    </task>
+    <task id="LOCAL-00001" summary="creating waves and tickets based on createTicketEvent()">
+      <created>1583176148808</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1583176148808</updated>
+    </task>
+    <task id="LOCAL-00002" summary="zmena prim klice na string (unique) presunuti tabulky do componenty, snaha udelat nested tabulku pro eventy a vlny">
+      <created>1584017486389</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1584017486389</updated>
+    </task>
+    <task id="LOCAL-00003" summary="rozsireni tabulky o edit">
+      <created>1585081065065</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1585081065065</updated>
+    </task>
+    <task id="LOCAL-00004" summary="aaa">
+      <created>1585081913947</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1585081913947</updated>
+    </task>
+    <task id="LOCAL-00005" summary="admin table is dynamic progress in editing waves, validation function">
+      <created>1585992745675</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1585992745675</updated>
+    </task>
+    <task id="LOCAL-00006" summary="payment works">
+      <created>1586277761435</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1586277761435</updated>
+    </task>
+    <task id="LOCAL-00007" summary="edit eventu a vlne je synchroni a snaha o provayani koupe s odeslanim emailu se vstupenkou">
+      <created>1586781180603</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1586781180603</updated>
+    </task>
+    <task id="LOCAL-00008" summary="redesigned structure of ordering, found bug with marking waves as soldout(attempt to remove it with triggers)">
+      <created>1587296082678</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1587296082678</updated>
+    </task>
+    <task id="LOCAL-00009" summary="progressing in marking wave as sold out with triggers&#10;format of ordering has been improved&#10;added sum of available tickets in admin">
+      <created>1587554759245</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1587554759245</updated>
+    </task>
+    <task id="LOCAL-00010" summary="overall cleaning up removing bugs styling">
+      <created>1587883162889</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1587883162890</updated>
+    </task>
+    <task id="LOCAL-00011" summary="sorting out validation problems with dates, one possible version">
+      <created>1608207094027</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1608207094028</updated>
+    </task>
+    <task id="LOCAL-00012" summary="prep for vue component new tickets user owns function">
+      <created>1617467327308</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1617467327308</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="creating waves and tickets based on createTicketEvent()" />
+    <MESSAGE value="zmena prim klice na string (unique) presunuti tabulky do componenty, snaha udelat nested tabulku pro eventy a vlny" />
+    <MESSAGE value="rozsireni tabulky o edit" />
+    <MESSAGE value="aaa" />
+    <MESSAGE value="admin table is dynamic progress in editing waves, validation function" />
+    <MESSAGE value="payment works" />
+    <MESSAGE value="edit eventu a vlne je synchroni a snaha o provayani koupe s odeslanim emailu se vstupenkou" />
+    <MESSAGE value="redesigned structure of ordering, found bug with marking waves as soldout(attempt to remove it with triggers)" />
+    <MESSAGE value="progressing in marking wave as sold out with triggers&#10;format of ordering has been improved&#10;added sum of available tickets in admin" />
+    <MESSAGE value="overall cleaning up removing bugs styling" />
+    <MESSAGE value="sorting out validation problems with dates, one possible version" />
+    <MESSAGE value="prep for vue component new tickets user owns function" />
+    <option name="LAST_COMMIT_MESSAGE" value="prep for vue component new tickets user owns function" />
+  </component>
+</project>

@@ -1,0 +1,56 @@
+<!-- xgajdo24
+ náhled pro formulář pro tvorbu a úpravu událostí
+ -->
+<ng-container [formGroup]="formGroup">
+    <!-- část zařizující informace o eventu -->
+    <h2 mat-dialog-title>Vytvořit nový event</h2>
+
+    <mat-dialog-content [formGroup]="formGroup">
+        <div fxLayout fxLayoutGap="12px" class="margin-bottom">
+            <!-- jedná se o vlastní pole v podobě komponenty InputComponent a DatepickerComponent -->
+            <app-input formControlName="name" label="Název akce" placeholder="Název akce" [required]="true"></app-input>
+            <app-datepicker formControlName="date" [required]="true" placeholder="Datum akce"></app-datepicker>
+            <app-input formControlName="place" placeholder="Místo konání" [required]="true"></app-input>
+            <mat-form-field>
+                <ngx-mat-file-input [required]="!isEditingExisting" [multiple]="false" accept="image/*" formControlName="files">
+                    <mat-icon ngxMatFileInputIcon>folder</mat-icon>
+                </ngx-mat-file-input>
+            </mat-form-field>
+        </div>
+        <!-- čast zařizující vlny vstupenek -->
+        <h4 mat-dialog-title>Vlny vstupenek</h4>
+        <ng-container formArrayName="waves">
+            <div fxLayout fxLayoutGap="12px" class="margin-bottom" *ngFor="let wave of waves.controls; let i = index">
+                <div [formGroupName]="i" fxLayout fxLayoutGap="12px">
+                    <app-input formControlName="count" placeholder="Počet vstupenek" type="number" [required]="true"></app-input>
+                    <app-input formControlName="price" placeholder="Cena vstupenek" type="number" [required]="true"></app-input>
+                    <app-datepicker
+                            formControlName="expiration"
+                            [dateToCompare]="formGroup.get('date')"
+                            [required]="true"
+                            placeholder="Datum expirace"
+                    ></app-datepicker>
+                </div>
+                <button mat-button type="button" color="warn" (click)="removeWave(i)">
+                    <mat-icon>clear</mat-icon>
+                </button>
+            </div>
+        </ng-container>
+
+        <div class="text-right add-button-spacing">
+            <button mat-button type="button" (click)="addWave()"><mat-icon>add</mat-icon> Přidat</button>
+        </div>
+    </mat-dialog-content>
+
+    <mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close color="danger">Zrušit</button>
+        <button
+            mat-flat-button
+            color="primary"
+            (click)="confirm()"
+            [disabled]="formGroup.pristine || formGroup.status === 'INVALID'"
+        >
+            Uložit
+        </button>
+    </mat-dialog-actions>
+</ng-container>

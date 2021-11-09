@@ -1,0 +1,18 @@
+{
+    "/sendQRcode": {
+        "target": "http://localhost:5000/ticketeer-4d3d3/us-central1/sendQRcode",
+        "secure": false
+    },
+    "/buyTicket": {
+        "target": "http://localhost:5000/ticketeer-4d3d3/us-central1/buyTicket",
+        "secure": false
+    },
+    "/getClientToken": {
+        "target": "http://localhost:5000/ticketeer-4d3d3/us-central1/getClientToken",
+        "secure": false
+    },
+    "/createPurchase": {
+        "target": "http://localhost:5000/ticketeer-4d3d3/us-central1/createPurchase",
+        "secure": false
+    }
+}

@@ -1,0 +1,39 @@
+<!-- xgajdo24
+pokud je uživatel přihlášen zobrazítabulku s funcí vytvořit událost a nebo validátor
+-->
+<ng-container *ngIf="user$ | async as user; else login">
+    <div class="user-avatar">
+        <ngx-auth-firebaseui-avatar></ngx-auth-firebaseui-avatar>
+    </div>
+    <!-- pokud nebyl spuštěn validátor zobrazí se tato komponenat s tabulkou -->
+    <div class="main-content" *ngIf="!selectedEventId" >
+        <app-ticket-event-table [uId]="user.uid" (selectedEventId)="setSelectedEvent($event)"></app-ticket-event-table>
+    </div>
+    <!-- pokud byl spuštěn validátor, je mu předáno id události a zobrazí se pouze validátor -->
+    <app-ticket-validator [eventId]="selectedEventId" *ngIf="selectedEventId"></app-ticket-validator>
+
+    <footer>
+        <mat-toolbar>
+            <button *ngIf="!selectedEventId" mat-button mat-flat-button color="primary" (click)="createNewEvent(user)">Vytvořit Událost</button>
+            <button *ngIf="selectedEventId" mat-button mat-flat-button color="primary" (click)="selectedEventId = ''">Zpět do administrace</button>
+        </mat-toolbar>
+    </footer>
+</ng-container>
+<!-- okno pro přihlášení  -->
+<ng-template #login>
+    <div class="admin-login">
+        <ngx-auth-firebaseui-login
+            [resetPasswordEnabled]="false"
+            [providers]="'google'"
+            (onSuccess)="onSuccess()"
+            [titleText]="'Přihlášení'"
+            [messageOnAuthSuccess]="'Vitejte'"
+            [orLabelText]="'nebo'"
+            [emailErrorRequiredText]="'Email je vyžadován'"
+            [emailErrorPatternText]="'Špatný formát emailu'"
+            [passwordText]="'Heslo'"
+            [passwordErrorRequiredText]="'Heslo je vyžadováno'"
+            [registrationEnabled]="false"
+        ></ngx-auth-firebaseui-login>
+    </div>
+</ng-template>

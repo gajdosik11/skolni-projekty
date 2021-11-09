@@ -1,0 +1,10 @@
+:host {
+    height: calc(100vh - 100px);
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 3rem;
+    text-transform: uppercase;
+}

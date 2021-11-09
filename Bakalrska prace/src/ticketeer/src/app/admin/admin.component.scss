@@ -1,0 +1,95 @@
+/* xgajdo24
+* stylování pro komponentu AdminComponent
+*/
+@import '../../assets/scss/helpers';
+
+.main-content {
+    min-height: calc(100vh - 60px);
+}
+
+footer {
+    background: #323232;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+
+    mat-toolbar .mat-button {
+        margin-left: auto;
+    }
+}
+app-ticket-event-table {
+    button {
+        font-size: small;
+        padding: 0;
+    }
+
+    table {
+        width: 100%;
+        box-shadow: none;
+
+        .mat-header-cell {
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .mat-cell,
+        .mat-header-cell {
+            border-bottom-color: rgba(0, 0, 0, 0.42);
+        }
+
+        .child-element-detail {
+            align-items: center;
+
+            .inner-table-wrapper {
+                width: 100%;
+                margin-left: 2rem;
+                box-shadow: none;
+
+                .inner-table {
+                    margin: 1rem;
+                    box-shadow: none;
+
+                    .mat-cell,
+                    .mat-header-cell {
+                        border-bottom-color: rgba(0, 0, 0, 0.14);
+                        padding: 4px;
+                    }
+
+                    .mat-header-cell {
+                        font-size: 17px;
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+    }
+
+    td {
+        div[min-height='0px'] {
+            margin: 0;
+        }
+    }
+
+    tr.example-detail-row {
+        height: 0;
+    }
+
+    tr.child-element-row:not(.example-expanded-row):hover {
+        background-color: darken(whitesmoke, 2%);
+    }
+
+    tr.example-expanded-row {
+        background: darken(whitesmoke, 2%);
+    }
+
+    .child-element-row td {
+        border-bottom-width: 0;
+        padding: 6px;
+    }
+
+    .child-element-detail {
+        overflow: hidden;
+        display: flex;
+    }
+}
